@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AppfailReporting;
 
 namespace MvcApplication1
 {
@@ -23,6 +24,8 @@ namespace MvcApplication1
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            Appfail.Configure.ReportingMaxmimumInterval(TimeSpan.FromSeconds(0));
         }
     }
 }
